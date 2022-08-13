@@ -11,7 +11,7 @@ system.time(if(!file.exists("./data/Georgia/psam_h13.csv")){
                 "./data/csv_hga.zip",
                 method="curl",
                 mode="wb")
-  unzip("./data/Georgia.zip",exdir="./data/Georgia")
+  unzip("./data/csv_hga.zip",exdir="./data/Georgia")
 })
 # download & extract Georgia person file if necessary 
 system.time(if(!file.exists("./data/Georgia/psam_p13.csv")){
