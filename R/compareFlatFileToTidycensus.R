@@ -19,4 +19,9 @@ mismatched_households <- household[household$SERIALNO %in% mismatches, ]
 table(mismatched_households$NP)
 
 table(mismatched_households$BLD)
+
+# weights in vacant buildings
 sum(mismatched_households$WGTP)
+
+# difference betweeen weights in original file vs. tidycensus ile
+sum(household$WGTP) - sum(ga_pums_household$WGTP)

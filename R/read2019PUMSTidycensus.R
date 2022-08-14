@@ -30,7 +30,7 @@ system.time(ga_pums_person <- get_pums(
 # https://walker-data.com/tidycensus/articles/pums-data.html  
 
 system.time(ga_pums_household <- get_pums(
-  variables = c("ADJHSG", "ADJINC","TYPE"),
+  variables = c("ADJHSG", "ADJINC","TYPE","WGTP"),
   state = "GA",
   survey = "acs5",
   variables_filter = list(SPORDER = 1),
