@@ -28,6 +28,10 @@ if(!file.exists("./data/5-year-PUMS-dictionary.csv")) {
                 "./data/5-year-PUMS-dictionary.csv",
                 method="curl",
                 mode="w")
+  download.file("https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2015-2019.txt",
+                "./data/5-year-PUMS-dictionary.txt",
+                method="curl",
+                mode="w")
 }
 
 # read the file 
@@ -35,4 +39,3 @@ library(readr)
 system.time(household <- read_csv("./data/Georgia/psam_h13.csv",col_names = TRUE))
 system.time(person <- read_csv("./data/Georgia/psam_p13.csv",col_names = TRUE))
 
-table(person$AGEP,person$SEX)
