@@ -9,7 +9,7 @@ source("./R/readPUMS2019Georgia.R")
 
 # confirm unique Household IDs - flat file
 serialNumbers <- unique(household$SERIALNO)
-serialNumbers_tidycensus <- unique(ga_pums_person$SERIALNO)
+serialNumbers_tidycensus <- unique(ga_pums_household$SERIALNO)
 length(serialNumbers) - length(serialNumbers_tidycensus)
 mismatches <- serialNumbers[!(serialNumbers %in% serialNumbers_tidycensus)]
 
