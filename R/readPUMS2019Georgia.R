@@ -1,5 +1,6 @@
 #
 # read Georgia 2019 ACS data
+# https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/
 
 # create data directories if needed
 if(!dir.exists("./data")) dir.create("./data")
