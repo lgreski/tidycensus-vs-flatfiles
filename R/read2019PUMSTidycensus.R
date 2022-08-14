@@ -16,11 +16,11 @@ library(tidyverse)
 
 # read person level data 
 system.time(ga_pums_person <- get_pums(
-  variables = c("SEX", "AGEP"),
+  variables = c("SEX", "AGEP","PUMA","SCHL"),
   state = "GA",
   survey = "acs5",
   year = 2019,
-  recode = TRUE
+  recode = TRUE 
 ))
 
 
