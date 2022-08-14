@@ -17,3 +17,6 @@ mismatched_households <- household[household$SERIALNO %in% mismatches, ]
 
 # verify that they're all vacant buildings
 table(mismatched_households$NP)
+
+table(mismatched_households$BLD)
+sum(mismatched_households$WGTP)

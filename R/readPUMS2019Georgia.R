@@ -1,6 +1,7 @@
 #
 # read Georgia 2019 ACS data
 # https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/
+# https://www2.census.gov/programs-surveys/acs/tech_docs/pums/estimates/pums_record_count_19.csv
 
 # create data directories if needed
 if(!dir.exists("./data")) dir.create("./data")
@@ -33,10 +34,16 @@ if(!file.exists("./data/5-year-PUMS-dictionary.csv")) {
                 "./data/5-year-PUMS-dictionary.txt",
                 method="curl",
                 mode="w")
+  download.file("https://www2.census.gov/programs-surveys/acs/tech_docs/pums/estimates/pums_record_count_15_19.csv",
+                "./data/5-year-PUMS-record-counts.csv",
+                method="curl",
+                mode="w")
+  
 }
 
 # read the file 
 library(readr)
 system.time(household <- read_csv("./data/Georgia/psam_h13.csv",col_names = TRUE))
 system.time(person <- read_csv("./data/Georgia/psam_p13.csv",col_names = TRUE))
+system.time(records <- read_csv("./data/5-year-PUMS-record-counts.csv",col_names = TRUE))
 
