@@ -57,3 +57,6 @@ system.time(ga_pums_person <- get_pums(
 ga_survey_design_tidy <- to_survey(ga_pums_person)
 ga_survey_design_tidy %>% 
   survey_count(PUMA, SEX) -> tidySE
+
+# household income chart documented here
+# https://walker-data.com/tidycensus/articles/basic-usage.html 
