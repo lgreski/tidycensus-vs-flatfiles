@@ -19,3 +19,5 @@ if(!dir.exists("./data/Georgia")) dir.create("./data/Georgia")
 
 saveRDS(ga_pums_person,"./data/Georgia/ga_pums_person.rds")
 
+# read person data from RDS
+ga_pums_person <- readRDS("./data/Georgia/ga_pums_person.rds")
